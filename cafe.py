@@ -1,12 +1,12 @@
 from abc import ABC, abstractclassmethod, abstractmethod
-from msilib.schema import Property
+#from msilib.schema import Property
 
 #Creamos la clase Abstracta
 class Cafe(ABC):
-    def __init__(self) -> None:
-        #definimos sus propiedades del cafe
-        #el cual es una propiedad privada
-        self._descripcion = "Cualquier Cafe"
+        def __init__(self) -> None:
+            #definimos sus propiedades del cafe
+            #el cual es una propiedad privada
+            self._descripcion = "Cualquier Cafe"
 
         #Definimos el getter y el setter de esta propiedad
         def set_descriptcion(self,valor:str) -> None:
@@ -25,7 +25,7 @@ class Cafe(ABC):
 
 class Frappucino(Cafe):
     def __init__(self) -> None:
-        self._descripcion= "Frappucino"
+        self._descripcion = "Frappucino"
     
     def calcular_costo(self) -> float:
         return 1.99
@@ -33,7 +33,7 @@ class Frappucino(Cafe):
 
 class Latte(Cafe):
     def __init__(self) -> None:
-        self._descripcion= "Latte"
+        self._descripcion = "Latte"
     
     def calcular_costo(self) -> float:
         return 1.85

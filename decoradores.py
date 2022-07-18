@@ -10,6 +10,7 @@ class Extra(Cafe):
     def get_descripcion(self) -> str:
         raise NotImplementedError
 
+    @abstractmethod
     def calcular_costo(self) -> float:
         raise NotImplementedError
 
@@ -18,25 +19,25 @@ class CremaBatida(Extra):
     #Implementamos sus 2 metodos abstractos de la clase heredada
 
     #Recibimos un objecto
-    def __init__(self,cafe: Cafe) -> None:
+        def __init__(self, cafe: Cafe) -> None:
         #lo que hacemos en el constructor es guardar una copia del original
-        self._cafe = cafe
+            self._cafe = cafe
 
         def get_descripcion(self) -> str:
             return f"{self._cafe.get_descripcion()},con crema batida"
 
         def calcular_costo(self) -> float:
-            return self._cafe.get_descripcion() + 1.0
+            return self._cafe.calcular_costo() + 1.0
 
 
 class Leche(Extra):
 
-    def __init__(self,cafe: Cafe) -> None:
-        self._cafe = cafe
+        def __init__(self, cafe: Cafe) -> None:
+            self._cafe = cafe
 
         def get_descripcion(self) -> str:
             return f"{self._cafe.get_descripcion()},con Leche"
 
         def calcular_costo(self) -> float:
-            return self._cafe.get_descripcion() + .5
+            return self._cafe.calcular_costo() + .5
 
